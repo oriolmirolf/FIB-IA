@@ -1,0 +1,1271 @@
+@prefix : <http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14> .
+
+<http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://webprotege.stanford.edu/se_ejercita_con
+<http://webprotege.stanford.edu/se_ejercita_con> rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                                 owl:inverseOf :ejercita ;
+                                                 rdfs:domain :grupo_muscular ;
+                                                 rdfs:range :Ejercicio .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#conjunto_de
+:conjunto_de rdf:type owl:ObjectProperty ;
+             rdfs:domain :Sesion ;
+             rdfs:range :Ejercicio .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#dispone_de
+:dispone_de rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Usuario ;
+            rdfs:range :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#ejercita
+:ejercita rdf:type owl:ObjectProperty ;
+          rdfs:domain :Ejercicio ;
+          rdfs:range :grupo_muscular .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#lesion_de
+:lesion_de rdf:type owl:ObjectProperty ;
+           rdfs:domain :Lesion ;
+           rdfs:range :grupo_muscular .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#no_recomienda_ejercicio
+:no_recomienda_ejercicio rdf:type owl:ObjectProperty ;
+                         rdfs:domain :Sintoma ;
+                         rdfs:range :Enfermedad .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#objetivo_enfermedad
+:objetivo_enfermedad rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Enfermedad ;
+                     rdfs:range :Objetivo .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#requiere
+:requiere rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Ejercicio ;
+          rdfs:range :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#se_trabaja_con
+:se_trabaja_con rdf:type owl:ObjectProperty ;
+                rdfs:domain :Objetivo ;
+                rdfs:range :Ejercicio .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#sufre_de
+:sufre_de rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Usuario ;
+          rdfs:range :Circunstancia .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Duracion
+:Duracion rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Aerobico ;
+          rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Edad
+:Edad rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Usuario ;
+      rdfs:range [ rdf:type rdfs:Datatype ;
+                   owl:oneOf [ rdf:type rdf:List ;
+                               rdf:first "EXPERIMENTADO" ;
+                               rdf:rest [ rdf:type rdf:List ;
+                                          rdf:first "JOVEN" ;
+                                          rdf:rest [ rdf:type rdf:List ;
+                                                     rdf:first "MEDIO" ;
+                                                     rdf:rest rdf:nil
+                                                   ]
+                                        ]
+                             ]
+                 ] .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Intensidad_MET
+:Intensidad_MET rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Aerobico ;
+                rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Intensidad_RM
+:Intensidad_RM rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Fuerza ;
+               rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Nivel
+:Nivel rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Usuario ;
+       rdfs:range [ rdf:type rdfs:Datatype ;
+                    owl:oneOf [ rdf:type rdf:List ;
+                                rdf:first "ALTO" ;
+                                rdf:rest [ rdf:type rdf:List ;
+                                           rdf:first "BAJO" ;
+                                           rdf:rest [ rdf:type rdf:List ;
+                                                      rdf:first "MEDIO" ;
+                                                      rdf:rest [ rdf:type rdf:List ;
+                                                                 rdf:first "MEDIO_ALTO" ;
+                                                                 rdf:rest [ rdf:type rdf:List ;
+                                                                            rdf:first "MEDIO_BAJO" ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ]
+                              ]
+                  ] .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Repeticiones
+:Repeticiones rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Calentamiento ,
+                          :Equilibrio ,
+                          :Estiramiento_y_flexibilidad ,
+                          :Fuerza ;
+              rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Series
+:Series rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Calentamiento ,
+                    :Equilibrio ,
+                    :Estiramiento_y_flexibilidad ,
+                    :Fuerza ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Tiempo_restante
+:Tiempo_restante rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Sesion ;
+                 rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#durSesion
+:durSesion rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Usuario ;
+           rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#numSesiones
+:numSesiones rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Usuario ;
+             rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#puntuacion_ejercicio
+:puntuacion_ejercicio rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Ejercicio ;
+                      rdfs:range xsd:integer .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Aerobico
+:Aerobico rdf:type owl:Class ;
+          rdfs:subClassOf :Ejercicio .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Calentamiento
+:Calentamiento rdf:type owl:Class ;
+               rdfs:subClassOf :Ejercicio .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Circunstancia
+:Circunstancia rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Ejercicio
+:Ejercicio rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Enfermedad
+:Enfermedad rdf:type owl:Class ;
+            rdfs:subClassOf :Circunstancia .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Equilibrio
+:Equilibrio rdf:type owl:Class ;
+            rdfs:subClassOf :Ejercicio .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Estiramiento_y_flexibilidad
+:Estiramiento_y_flexibilidad rdf:type owl:Class ;
+                             rdfs:subClassOf :Ejercicio ;
+                             rdfs:label "Estiramiento" .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Flexibilidad
+:Flexibilidad rdf:type owl:Class ;
+              rdfs:subClassOf :Ejercicio .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Fuerza
+:Fuerza rdf:type owl:Class ;
+        rdfs:subClassOf :Ejercicio .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Lesion
+:Lesion rdf:type owl:Class ;
+        rdfs:subClassOf :Circunstancia .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Material
+:Material rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Objetivo
+:Objetivo rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Sesion
+:Sesion rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Sintoma
+:Sintoma rdf:type owl:Class ;
+         rdfs:subClassOf :Circunstancia .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Usuario
+:Usuario rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#grupo_muscular
+:grupo_muscular rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://webprotege.stanford.edu/Canoa_y_remos
+<http://webprotege.stanford.edu/Canoa_y_remos> rdf:type owl:NamedIndividual ,
+                                                        :Material .
+
+
+###  http://webprotege.stanford.edu/Colesterol_alto
+<http://webprotege.stanford.edu/Colesterol_alto> rdf:type owl:NamedIndividual ,
+                                                          :Enfermedad ;
+                                                 :objetivo_enfermedad :Aumentar_equilibrio ,
+                                                                      :Aumentar_resistencia_o_Bajar_de_peso .
+
+
+###  http://webprotege.stanford.edu/Extension_de_cadera
+<http://webprotege.stanford.edu/Extension_de_cadera> rdf:type owl:NamedIndividual ,
+                                                              :Equilibrio ;
+                                                     :ejercita :Cadera_y_piernas .
+
+
+###  http://webprotege.stanford.edu/F_Brazos_con_peso
+<http://webprotege.stanford.edu/F_Brazos_con_peso> rdf:type owl:NamedIndividual ,
+                                                            :Fuerza ;
+                                                   :ejercita :Brazos ;
+                                                   :requiere :Peso_libre_o_maquina_de_resistencia_variable ;
+                                                   :Intensidad_RM -1 .
+
+
+###  http://webprotege.stanford.edu/F_Hombros
+<http://webprotege.stanford.edu/F_Hombros> rdf:type owl:NamedIndividual ,
+                                                    :Fuerza ;
+                                           :ejercita :Hombros ;
+                                           :Intensidad_RM -1 .
+
+
+###  http://webprotege.stanford.edu/Flexion_de_cadera
+<http://webprotege.stanford.edu/Flexion_de_cadera> rdf:type owl:NamedIndividual ,
+                                                            :Equilibrio ;
+                                                   :ejercita :Cadera_y_piernas .
+
+
+###  http://webprotege.stanford.edu/Flexion_de_rodilla
+<http://webprotege.stanford.edu/Flexion_de_rodilla> rdf:type owl:NamedIndividual ,
+                                                             :Equilibrio ;
+                                                    :ejercita :Cadera_y_piernas .
+
+
+###  http://webprotege.stanford.edu/Flexion_plantar
+<http://webprotege.stanford.edu/Flexion_plantar> rdf:type owl:NamedIndividual ,
+                                                          :Equilibrio ;
+                                                 :ejercita :Cadera_y_piernas .
+
+
+###  http://webprotege.stanford.edu/Levantamiento_lateral_de_pierna
+<http://webprotege.stanford.edu/Levantamiento_lateral_de_pierna> rdf:type owl:NamedIndividual ,
+                                                                          :Equilibrio ;
+                                                                 :ejercita :Cadera_y_piernas .
+
+
+###  http://webprotege.stanford.edu/Tai-chi
+<http://webprotege.stanford.edu/Tai-chi> rdf:type owl:NamedIndividual ,
+                                                  :Equilibrio ;
+                                         :ejercita :Cadera_y_piernas ,
+                                                   :Espalda ,
+                                                   :Hombros .
+
+
+###  http://webprotege.stanford.edu/?
+<http://webprotege.stanford.edu/?> rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Abdominales
+:Abdominales rdf:type owl:NamedIndividual ,
+                      :grupo_muscular .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Acceso_a_escaleras
+:Acceso_a_escaleras rdf:type owl:NamedIndividual ,
+                             :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Acceso_a_una_piscina
+:Acceso_a_una_piscina rdf:type owl:NamedIndividual ,
+                               :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Aerobic
+:Aerobic rdf:type owl:NamedIndividual ,
+                  :Aerobico ;
+         :Intensidad_MET 6 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Alpinismo
+:Alpinismo rdf:type owl:NamedIndividual ,
+                    :Aerobico ;
+           :Intensidad_MET 7 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Aneurisma_disecante
+:Aneurisma_disecante rdf:type owl:NamedIndividual ,
+                              :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Anginas
+:Anginas rdf:type owl:NamedIndividual ,
+                  :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Arritmia_ventricular_no_controlada
+:Arritmia_ventricular_no_controlada rdf:type owl:NamedIndividual ,
+                                             :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Artritis
+:Artritis rdf:type owl:NamedIndividual ,
+                   :Enfermedad ;
+          :objetivo_enfermedad :Aumentar_flexibilidad .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Artrosis
+:Artrosis rdf:type owl:NamedIndividual ,
+                   :Enfermedad ;
+          :objetivo_enfermedad :Aumentar_resistencia_o_Bajar_de_peso .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Aumentar_equilibrio
+:Aumentar_equilibrio rdf:type owl:NamedIndividual ,
+                              :Objetivo ;
+                     :se_trabaja_con <http://webprotege.stanford.edu/Extension_de_cadera> ,
+                                     <http://webprotege.stanford.edu/Flexion_de_cadera> ,
+                                     <http://webprotege.stanford.edu/Flexion_de_rodilla> ,
+                                     <http://webprotege.stanford.edu/Flexion_plantar> ,
+                                     <http://webprotege.stanford.edu/Levantamiento_lateral_de_pierna> ,
+                                     <http://webprotege.stanford.edu/Tai-chi> ,
+                                     :Caminar_con_apoyo_talón_punta ,
+                                     :Desplazamientos_multidireccionales_con_peso_extra ,
+                                     :Posicion_de_semitandem ,
+                                     :Posicion_de_tandem ,
+                                     :Transferencia_de_peso_corporal .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Aumentar_flexibilidad
+:Aumentar_flexibilidad rdf:type owl:NamedIndividual ,
+                                :Objetivo ;
+                       :se_trabaja_con <http://webprotege.stanford.edu/Tai-chi> ,
+                                       :Estiramiento_de_abdominales ,
+                                       :Estiramiento_de_brazos ,
+                                       :Estiramiento_de_cadera_y_piernas ,
+                                       :Estiramiento_de_espalda ,
+                                       :Estiramiento_de_hombros ,
+                                       :Estiramiento_de_pecho .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Aumentar_masa_muscular
+:Aumentar_masa_muscular rdf:type owl:NamedIndividual ,
+                                 :Objetivo ;
+                        :se_trabaja_con <http://webprotege.stanford.edu/F_Brazos_con_peso> ,
+                                        <http://webprotege.stanford.edu/F_Hombros> ,
+                                        :F_Abdominales ,
+                                        :F_Abdominales_con_peso ,
+                                        :F_Brazos ,
+                                        :F_Cadera_y_piernas ,
+                                        :F_Cadera_y_piernas_con_peso ,
+                                        :F_Espalda ,
+                                        :F_Espalda_con_peso ,
+                                        :F_Hombros_con_peso ,
+                                        :F_Pecho ,
+                                        :F_Pecho_con_peso .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Aumentar_resistencia_o_Bajar_de_peso
+:Aumentar_resistencia_o_Bajar_de_peso rdf:type owl:NamedIndividual ,
+                                               :Objetivo ;
+                                      :se_trabaja_con :Aerobic ,
+                                                      :Alpinismo ,
+                                                      :Badminton ,
+                                                      :Bicicleta_estatica_100w ,
+                                                      :Bicicleta_estatica_150w ,
+                                                      :Bicicleta_estatica_200w ,
+                                                      :Bicicleta_estatica_50w ,
+                                                      :Buceo_en_aguas_templadas ,
+                                                      :Caminar_a_1.5-3_kmph ,
+                                                      :Caminar_a_3-4.5_kmph ,
+                                                      :Caminar_a_4.5-5.5_kmph ,
+                                                      :Caminar_a_5-6_kmph ,
+                                                      :Caminar_a_6-7_kmph ,
+                                                      :Caminar_a_7.5_kmph ,
+                                                      :Ciclismo_a_10-12_kmph ,
+                                                      :Ciclismo_a_12-13_kmph ,
+                                                      :Ciclismo_a_18_kmph ,
+                                                      :Ciclismo_a_20_kmph ,
+                                                      :Ciclismo_a_21_kmph ,
+                                                      :Ciclismo_a_7.5-10_kmph ,
+                                                      :Ciclismo_a_7.5_kmph ,
+                                                      :Ciclismo_a_mas_de_21_kmph ,
+                                                      :Ciclismo_de_montaña ,
+                                                      :Correr_a_7.5_kmph ,
+                                                      :Correr_a_8_kmph ,
+                                                      :Correr_a_mas_de_9_kmph ,
+                                                      :Esqui_de_fondo ,
+                                                      :Esqui_intenso ,
+                                                      :Esqui_lento ,
+                                                      :Fronton ,
+                                                      :Gimnasia_suave ,
+                                                      :Golf ,
+                                                      :Natacion_moderada-rapida ,
+                                                      :Natacion_suave ,
+                                                      :Patinaje_intenso ,
+                                                      :Patinaje_suave ,
+                                                      :Pesca ,
+                                                      :Remo_o_Canoa_a_4.5_kmph ,
+                                                      :Remo_o_Canoa_a_6_kmph ,
+                                                      :Remo_o_canoa_a_7.5_kmph ,
+                                                      :Tenis ,
+                                                      :Tenis_de_mesa ,
+                                                      :Tiro_con_arco ,
+                                                      :Vela ,
+                                                      :Voleibol .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Aumento_subito_de_disnea_en_reposo
+:Aumento_subito_de_disnea_en_reposo rdf:type owl:NamedIndividual ,
+                                             :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Badminton
+:Badminton rdf:type owl:NamedIndividual ,
+                    :Aerobico ;
+           :requiere :Material_de_badminton ;
+           :Intensidad_MET 5 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Bicicleta
+:Bicicleta rdf:type owl:NamedIndividual ,
+                    :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Bicicleta_de_montanya
+:Bicicleta_de_montanya rdf:type owl:NamedIndividual ,
+                                :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Bicicleta_estatica
+:Bicicleta_estatica rdf:type owl:NamedIndividual ,
+                             :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Bicicleta_estatica_100w
+:Bicicleta_estatica_100w rdf:type owl:NamedIndividual ,
+                                  :Aerobico ;
+                         :requiere :Bicicleta_estatica ;
+                         :Intensidad_MET 5 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Bicicleta_estatica_150w
+:Bicicleta_estatica_150w rdf:type owl:NamedIndividual ,
+                                  :Aerobico ;
+                         :requiere :Bicicleta_estatica ;
+                         :Intensidad_MET 6 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Bicicleta_estatica_200w
+:Bicicleta_estatica_200w rdf:type owl:NamedIndividual ,
+                                  :Aerobico ;
+                         :requiere :Bicicleta_estatica ;
+                         :Intensidad_MET 9 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Bicicleta_estatica_50w
+:Bicicleta_estatica_50w rdf:type owl:NamedIndividual ,
+                                 :Aerobico ;
+                        :requiere :Bicicleta_estatica ;
+                        :Intensidad_MET 2 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Brazos
+:Brazos rdf:type owl:NamedIndividual ,
+                 :grupo_muscular ;
+        :ejercita :Brazos .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Buceo_en_aguas_templadas
+:Buceo_en_aguas_templadas rdf:type owl:NamedIndividual ,
+                                   :Aerobico ;
+                          :requiere :Material_de_buceo ;
+                          :Intensidad_MET 6 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Cadera_y_piernas
+:Cadera_y_piernas rdf:type owl:NamedIndividual ,
+                           :grupo_muscular .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Calentamiendo_de_abdominales
+:Calentamiendo_de_abdominales rdf:type owl:NamedIndividual ,
+                                       :Calentamiento ;
+                              :ejercita :Abdominales .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Calentamiendo_de_cadera_y_piernas
+:Calentamiendo_de_cadera_y_piernas rdf:type owl:NamedIndividual ,
+                                            :Calentamiento ;
+                                   :ejercita :Cadera_y_piernas .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Calentamiento_de_brazos
+:Calentamiento_de_brazos rdf:type owl:NamedIndividual ,
+                                  :Calentamiento ;
+                         :ejercita :Brazos .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Calentamiento_de_espalda
+:Calentamiento_de_espalda rdf:type owl:NamedIndividual ,
+                                   :Calentamiento ;
+                          :ejercita :Espalda .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Calentamiento_de_hombros
+:Calentamiento_de_hombros rdf:type owl:NamedIndividual ,
+                                   :Calentamiento ;
+                          :ejercita :Hombros .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Calentamiento_de_pecho
+:Calentamiento_de_pecho rdf:type owl:NamedIndividual ,
+                                 :Calentamiento ;
+                        :ejercita :Pecho .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Cambios_en_la_coloracion
+:Cambios_en_la_coloracion rdf:type owl:NamedIndividual ,
+                                   :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Caminar_a_1.5-3_kmph
+:Caminar_a_1.5-3_kmph rdf:type owl:NamedIndividual ,
+                               :Aerobico ;
+                      :Intensidad_MET 1 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Caminar_a_3-4.5_kmph
+:Caminar_a_3-4.5_kmph rdf:type owl:NamedIndividual ,
+                               :Aerobico ;
+                      :Intensidad_MET 2 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Caminar_a_4.5-5.5_kmph
+:Caminar_a_4.5-5.5_kmph rdf:type owl:NamedIndividual ,
+                                 :Aerobico ;
+                        :Intensidad_MET 3 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Caminar_a_5-6_kmph
+:Caminar_a_5-6_kmph rdf:type owl:NamedIndividual ,
+                             :Aerobico ;
+                    :Intensidad_MET 4 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Caminar_a_6-7_kmph
+:Caminar_a_6-7_kmph rdf:type owl:NamedIndividual ,
+                             :Aerobico ;
+                    :Intensidad_MET 5 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Caminar_a_7.5_kmph
+:Caminar_a_7.5_kmph rdf:type owl:NamedIndividual ,
+                             :Aerobico ;
+                    :Intensidad_MET 6 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Caminar_con_apoyo_talón_punta
+:Caminar_con_apoyo_talón_punta rdf:type owl:NamedIndividual ,
+                                        :Equilibrio ;
+                               :ejercita :Cadera_y_piernas .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Ciclismo_a_10-12_kmph
+:Ciclismo_a_10-12_kmph rdf:type owl:NamedIndividual ,
+                                :Aerobico ;
+                       :requiere :Bicicleta ;
+                       :Intensidad_MET 4 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Ciclismo_a_12-13_kmph
+:Ciclismo_a_12-13_kmph rdf:type owl:NamedIndividual ,
+                                :Aerobico ;
+                       :requiere :Bicicleta ;
+                       :Intensidad_MET 5 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Ciclismo_a_18_kmph
+:Ciclismo_a_18_kmph rdf:type owl:NamedIndividual ,
+                             :Aerobico ;
+                    :requiere :Bicicleta ;
+                    :Intensidad_MET 6 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Ciclismo_a_20_kmph
+:Ciclismo_a_20_kmph rdf:type owl:NamedIndividual ,
+                             :Aerobico ;
+                    :requiere :Bicicleta ;
+                    :Intensidad_MET 7 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Ciclismo_a_21_kmph
+:Ciclismo_a_21_kmph rdf:type owl:NamedIndividual ,
+                             :Aerobico ;
+                    :requiere :Bicicleta ;
+                    :Intensidad_MET 8 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Ciclismo_a_7.5-10_kmph
+:Ciclismo_a_7.5-10_kmph rdf:type owl:NamedIndividual ,
+                                 :Aerobico ;
+                        :requiere :Bicicleta ;
+                        :Intensidad_MET 3 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Ciclismo_a_7.5_kmph
+:Ciclismo_a_7.5_kmph rdf:type owl:NamedIndividual ,
+                              :Aerobico ;
+                     :requiere :Bicicleta ;
+                     :Intensidad_MET 2 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Ciclismo_a_mas_de_21_kmph
+:Ciclismo_a_mas_de_21_kmph rdf:type owl:NamedIndividual ,
+                                    :Aerobico ;
+                           :requiere :Bicicleta ;
+                           :Intensidad_MET 9 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Ciclismo_de_montaña
+:Ciclismo_de_montaña rdf:type owl:NamedIndividual ,
+                              :Aerobico ;
+                     :requiere :Bicicleta_de_montanya ;
+                     :Intensidad_MET 8 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Correr_a_7.5_kmph
+:Correr_a_7.5_kmph rdf:type owl:NamedIndividual ,
+                            :Aerobico ;
+                   :Intensidad_MET 7 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Correr_a_8_kmph
+:Correr_a_8_kmph rdf:type owl:NamedIndividual ,
+                          :Aerobico ;
+                 :Intensidad_MET 8 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Correr_a_mas_de_9_kmph
+:Correr_a_mas_de_9_kmph rdf:type owl:NamedIndividual ,
+                                 :Aerobico ;
+                        :Intensidad_MET 9 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Depresion
+:Depresion rdf:type owl:NamedIndividual ,
+                    :Enfermedad ;
+           :objetivo_enfermedad :Aumentar_flexibilidad ,
+                                :Aumentar_masa_muscular .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Desplazamientos_multidireccionales_con_peso_extra
+:Desplazamientos_multidireccionales_con_peso_extra rdf:type owl:NamedIndividual ,
+                                                            :Equilibrio ;
+                                                   :ejercita :Cadera_y_piernas ;
+                                                   :requiere :Peso_libre_o_maquina_de_resistencia_variable .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Diabetes
+:Diabetes rdf:type owl:NamedIndividual ,
+                   :Enfermedad ;
+          :objetivo_enfermedad :Aumentar_resistencia_o_Bajar_de_peso .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Diarrea
+:Diarrea rdf:type owl:NamedIndividual ,
+                  :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Dolor_en_el_pecho
+:Dolor_en_el_pecho rdf:type owl:NamedIndividual ,
+                            :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Embolo_pulmonar
+:Embolo_pulmonar rdf:type owl:NamedIndividual ,
+                          :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Enfermedad_Cardiovascular
+:Enfermedad_Cardiovascular rdf:type owl:NamedIndividual ,
+                                    :Enfermedad ;
+                           :objetivo_enfermedad :Aumentar_equilibrio ,
+                                                :Aumentar_flexibilidad .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Enfermedad_Pulmonar
+:Enfermedad_Pulmonar rdf:type owl:NamedIndividual ,
+                              :Enfermedad ;
+                     :objetivo_enfermedad :Mejorar_respiracion .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Espalda
+:Espalda rdf:type owl:NamedIndividual ,
+                  :grupo_muscular .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Esqui_de_fondo
+:Esqui_de_fondo rdf:type owl:NamedIndividual ,
+                         :Aerobico ;
+                :requiere :Material_de_esqui ;
+                :Intensidad_MET 8 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Esqui_intenso
+:Esqui_intenso rdf:type owl:NamedIndividual ,
+                        :Aerobico ;
+               :requiere :Material_de_esqui ;
+               :Intensidad_MET 7 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Esqui_lento
+:Esqui_lento rdf:type owl:NamedIndividual ,
+                      :Aerobico ;
+             :requiere :Material_de_esqui ;
+             :Intensidad_MET 6 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Estiramiento_de_abdominales
+:Estiramiento_de_abdominales rdf:type owl:NamedIndividual ,
+                                      :Estiramiento_y_flexibilidad ;
+                             :ejercita :Abdominales .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Estiramiento_de_brazos
+:Estiramiento_de_brazos rdf:type owl:NamedIndividual ,
+                                 :Estiramiento_y_flexibilidad ;
+                        :ejercita :Brazos .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Estiramiento_de_cadera_y_piernas
+:Estiramiento_de_cadera_y_piernas rdf:type owl:NamedIndividual ,
+                                           :Estiramiento_y_flexibilidad ;
+                                  :ejercita :Cadera_y_piernas .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Estiramiento_de_espalda
+:Estiramiento_de_espalda rdf:type owl:NamedIndividual ,
+                                  :Estiramiento_y_flexibilidad ;
+                         :ejercita :Espalda .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Estiramiento_de_hombros
+:Estiramiento_de_hombros rdf:type owl:NamedIndividual ,
+                                  :Estiramiento_y_flexibilidad ;
+                         :ejercita :Hombros .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Estiramiento_de_pecho
+:Estiramiento_de_pecho rdf:type owl:NamedIndividual ,
+                                :Estiramiento_y_flexibilidad ;
+                       :ejercita :Pecho .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Estonosis_aortica_grave
+:Estonosis_aortica_grave rdf:type owl:NamedIndividual ,
+                                  :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#F_Abdominales
+:F_Abdominales rdf:type owl:NamedIndividual ,
+                        :Fuerza ;
+               :ejercita :Abdominales ;
+               :Intensidad_RM -1 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#F_Abdominales_con_peso
+:F_Abdominales_con_peso rdf:type owl:NamedIndividual ,
+                                 :Fuerza ;
+                        :ejercita :Abdominales ;
+                        :requiere :Peso_libre_o_maquina_de_resistencia_variable ;
+                        :Intensidad_RM -1 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#F_Brazos
+:F_Brazos rdf:type owl:NamedIndividual ,
+                   :Fuerza ;
+          :ejercita :Brazos ;
+          :Intensidad_RM -1 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#F_Cadera_y_piernas
+:F_Cadera_y_piernas rdf:type owl:NamedIndividual ,
+                             :Fuerza ;
+                    :ejercita :Cadera_y_piernas ;
+                    :Intensidad_RM -1 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#F_Cadera_y_piernas_con_peso
+:F_Cadera_y_piernas_con_peso rdf:type owl:NamedIndividual ,
+                                      :Fuerza ;
+                             :ejercita :Cadera_y_piernas ;
+                             :requiere :Peso_libre_o_maquina_de_resistencia_variable ;
+                             :Intensidad_RM -1 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#F_Espalda
+:F_Espalda rdf:type owl:NamedIndividual ,
+                    :Fuerza ;
+           :ejercita :Espalda ;
+           :Intensidad_RM -1 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#F_Espalda_con_peso
+:F_Espalda_con_peso rdf:type owl:NamedIndividual ,
+                             :Fuerza ;
+                    :ejercita :Espalda ;
+                    :requiere :Peso_libre_o_maquina_de_resistencia_variable ;
+                    :Intensidad_RM -1 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#F_Hombros_con_peso
+:F_Hombros_con_peso rdf:type owl:NamedIndividual ,
+                             :Fuerza ;
+                    :ejercita :Hombros ;
+                    :requiere :Peso_libre_o_maquina_de_resistencia_variable ;
+                    :Intensidad_RM -1 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#F_Pecho
+:F_Pecho rdf:type owl:NamedIndividual ,
+                  :Fuerza ;
+         :ejercita :Pecho ;
+         :Intensidad_RM -1 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#F_Pecho_con_peso
+:F_Pecho_con_peso rdf:type owl:NamedIndividual ,
+                           :Fuerza ;
+                  :ejercita :Pecho ;
+                  :requiere :Peso_libre_o_maquina_de_resistencia_variable ;
+                  :Intensidad_RM -1 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Falta_de_aire
+:Falta_de_aire rdf:type owl:NamedIndividual ,
+                        :Sintoma ;
+               rdfs:label "Falta de aire"^^xsd:string .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Fibrosis
+:Fibrosis rdf:type owl:NamedIndividual ,
+                   :Enfermedad ;
+          :objetivo_enfermedad :Aumentar_equilibrio .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Fragilidad
+:Fragilidad rdf:type owl:NamedIndividual ,
+                     :Enfermedad ;
+            :objetivo_enfermedad :Aumentar_equilibrio ,
+                                 :Aumentar_masa_muscular .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Fronton
+:Fronton rdf:type owl:NamedIndividual ,
+                  :Aerobico ;
+         :requiere :Material_de_fronton ;
+         :Intensidad_MET 8 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Gimnasia_suave
+:Gimnasia_suave rdf:type owl:NamedIndividual ,
+                         :Aerobico ;
+                :Intensidad_MET 3 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Golf
+:Golf rdf:type owl:NamedIndividual ,
+               :Aerobico ;
+      :requiere :Material_de_golf ;
+      :Intensidad_MET 2 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Hipertension
+:Hipertension rdf:type owl:NamedIndividual ,
+                       :Enfermedad ;
+              :objetivo_enfermedad :Aumentar_resistencia_o_Bajar_de_peso .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Hipoglucemia
+:Hipoglucemia rdf:type owl:NamedIndividual ,
+                       :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Hombros
+:Hombros rdf:type owl:NamedIndividual ,
+                  :grupo_muscular .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Infeccion_aguda
+:Infeccion_aguda rdf:type owl:NamedIndividual ,
+                          :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Insuficiencia_cardiaca_congestiva_aguda
+:Insuficiencia_cardiaca_congestiva_aguda rdf:type owl:NamedIndividual ,
+                                                  :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Lesion_abdominales
+:Lesion_abdominales rdf:type owl:NamedIndividual ,
+                             :Lesion ;
+                    :lesion_de :Abdominales .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Lesion_brazos
+:Lesion_brazos rdf:type owl:NamedIndividual ,
+                        :Lesion ;
+               :lesion_de :Brazos .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Lesion_cadera_y_piernas
+:Lesion_cadera_y_piernas rdf:type owl:NamedIndividual ,
+                                  :Lesion ;
+                         :lesion_de :Cadera_y_piernas .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Lesion_espalda
+:Lesion_espalda rdf:type owl:NamedIndividual ,
+                         :Lesion ;
+                :lesion_de :Espalda .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Lesion_hombros
+:Lesion_hombros rdf:type owl:NamedIndividual ,
+                         :Lesion ;
+                :lesion_de :Hombros .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Lesion_pecho
+:Lesion_pecho rdf:type owl:NamedIndividual ,
+                       :Lesion ;
+              :lesion_de :Pecho .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Mareo
+:Mareo rdf:type owl:NamedIndividual ,
+                :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Material_de_badminton
+:Material_de_badminton rdf:type owl:NamedIndividual ,
+                                :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Material_de_buceo
+:Material_de_buceo rdf:type owl:NamedIndividual ,
+                            :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Material_de_esqui
+:Material_de_esqui rdf:type owl:NamedIndividual ,
+                            :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Material_de_fronton
+:Material_de_fronton rdf:type owl:NamedIndividual ,
+                              :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Material_de_golf
+:Material_de_golf rdf:type owl:NamedIndividual ,
+                           :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Material_de_patinaje
+:Material_de_patinaje rdf:type owl:NamedIndividual ,
+                               :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Material_de_pesca
+:Material_de_pesca rdf:type owl:NamedIndividual ,
+                            :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Material_de_tenis
+:Material_de_tenis rdf:type owl:NamedIndividual ,
+                            :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Material_de_tenis_de_mesa
+:Material_de_tenis_de_mesa rdf:type owl:NamedIndividual ,
+                                    :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Material_de_tiro_con_arco
+:Material_de_tiro_con_arco rdf:type owl:NamedIndividual ,
+                                    :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Material_de_voleibol
+:Material_de_voleibol rdf:type owl:NamedIndividual ,
+                               :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Material_para_hacer_vela
+:Material_para_hacer_vela rdf:type owl:NamedIndividual ,
+                                   :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Mejorar_respiracion
+:Mejorar_respiracion rdf:type owl:NamedIndividual ,
+                              :Objetivo ;
+                     :se_trabaja_con <http://webprotege.stanford.edu/Tai-chi> ,
+                                     :Estiramiento_de_abdominales ,
+                                     :Estiramiento_de_brazos ,
+                                     :Estiramiento_de_cadera_y_piernas ,
+                                     :Estiramiento_de_espalda ,
+                                     :Estiramiento_de_hombros ,
+                                     :Estiramiento_de_pecho .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Miocarditis
+:Miocarditis rdf:type owl:NamedIndividual ,
+                      :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Natacion_moderada-rapida
+:Natacion_moderada-rapida rdf:type owl:NamedIndividual ,
+                                   :Aerobico ;
+                          :requiere :Acceso_a_una_piscina ;
+                          :Intensidad_MET 7 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Natacion_suave
+:Natacion_suave rdf:type owl:NamedIndividual ,
+                         :Aerobico ;
+                :requiere :Acceso_a_una_piscina ;
+                :Intensidad_MET 4 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Nauseas
+:Nauseas rdf:type owl:NamedIndividual ,
+                  :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Osteoporosis
+:Osteoporosis rdf:type owl:NamedIndividual ,
+                       :Enfermedad ;
+              :objetivo_enfermedad :Aumentar_equilibrio ,
+                                   :Aumentar_masa_muscular .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Palpitaciones
+:Palpitaciones rdf:type owl:NamedIndividual ,
+                        :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Patinaje_intenso
+:Patinaje_intenso rdf:type owl:NamedIndividual ,
+                           :Aerobico ;
+                  :requiere :Material_de_patinaje ;
+                  :Intensidad_MET 8 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Patinaje_suave
+:Patinaje_suave rdf:type owl:NamedIndividual ,
+                         :Aerobico ;
+                :requiere :Material_de_patinaje ;
+                :Intensidad_MET 5 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Pecho
+:Pecho rdf:type owl:NamedIndividual ,
+                :grupo_muscular .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Pesca
+:Pesca rdf:type owl:NamedIndividual ,
+                :Aerobico ;
+       :requiere :Material_de_pesca ;
+       :Intensidad_MET 3 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Peso_libre_o_maquina_de_resistencia_variable
+:Peso_libre_o_maquina_de_resistencia_variable rdf:type owl:NamedIndividual ,
+                                                       :Material .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Piel_humeda
+:Piel_humeda rdf:type owl:NamedIndividual ,
+                      :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Posicion_de_semitandem
+:Posicion_de_semitandem rdf:type owl:NamedIndividual ,
+                                 :Equilibrio .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Posicion_de_tandem
+:Posicion_de_tandem rdf:type owl:NamedIndividual ,
+                             :Equilibrio .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Presion_arterial_sistolica_alta
+:Presion_arterial_sistolica_alta rdf:type owl:NamedIndividual ,
+                                          :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Psicosis
+:Psicosis rdf:type owl:NamedIndividual ,
+                   :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Reciente_infarto_de_miocardio_complicado
+:Reciente_infarto_de_miocardio_complicado rdf:type owl:NamedIndividual ,
+                                                   :Sintoma ;
+                                          rdfs:label "Reciente infarto de miocardio"^^xsd:string .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Remo_o_Canoa_a_4.5_kmph
+:Remo_o_Canoa_a_4.5_kmph rdf:type owl:NamedIndividual ,
+                                  :Aerobico ;
+                         :requiere <http://webprotege.stanford.edu/Canoa_y_remos> ;
+                         :Intensidad_MET 4 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Remo_o_Canoa_a_6_kmph
+:Remo_o_Canoa_a_6_kmph rdf:type owl:NamedIndividual ,
+                                :Aerobico ;
+                       :requiere <http://webprotege.stanford.edu/Canoa_y_remos> ;
+                       :Intensidad_MET 6 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Remo_o_canoa_a_7.5_kmph
+:Remo_o_canoa_a_7.5_kmph rdf:type owl:NamedIndividual ,
+                                  :Aerobico ;
+                         :requiere <http://webprotege.stanford.edu/Canoa_y_remos> ;
+                         :Intensidad_MET 7 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Sincope
+:Sincope rdf:type owl:NamedIndividual ,
+                  :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Sudoracion_fria
+:Sudoracion_fria rdf:type owl:NamedIndividual ,
+                          :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Tenis
+:Tenis rdf:type owl:NamedIndividual ,
+                :Aerobico ;
+       :requiere :Material_de_tenis ;
+       :Intensidad_MET 4 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Tenis_de_mesa
+:Tenis_de_mesa rdf:type owl:NamedIndividual ,
+                        :Aerobico ;
+               :requiere :Material_de_tenis_de_mesa ;
+               :Intensidad_MET 4 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Tiro_con_arco
+:Tiro_con_arco rdf:type owl:NamedIndividual ,
+                        :Aerobico ;
+               :requiere :Material_de_tiro_con_arco ;
+               :Intensidad_MET 3 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Transferencia_de_peso_corporal
+:Transferencia_de_peso_corporal rdf:type owl:NamedIndividual ,
+                                         :Equilibrio ;
+                                :ejercita :Espalda ,
+                                          :Pecho .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Vela
+:Vela rdf:type owl:NamedIndividual ,
+               :Aerobico ;
+      :requiere :Material_para_hacer_vela ;
+      :Intensidad_MET 4 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Voleibol
+:Voleibol rdf:type owl:NamedIndividual ,
+                   :Aerobico ;
+          :requiere :Material_de_voleibol ;
+          :Intensidad_MET 3 .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Vomitos
+:Vomitos rdf:type owl:NamedIndividual ,
+                  :Sintoma .
+
+
+###  http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Sobrepeso/Obesidad
+<http://www.semanticweb.org/nico/ontologies/2022/10/untitled-ontology-14#Sobrepeso/Obesidad> rdf:type owl:NamedIndividual ,
+                                                                                                      :Enfermedad ;
+                                                                                             :objetivo_enfermedad :Aumentar_resistencia_o_Bajar_de_peso .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
