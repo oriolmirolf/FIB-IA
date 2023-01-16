@@ -1,0 +1,177 @@
+ff: parsing domain file
+domain 'DESPLAZAMIENTOS-EXT1' defined
+ ... done.
+ff: parsing problem file
+problem 'NOMBRE' defined
+ ... done.
+
+
+no metric specified. plan length assumed.
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is EHC, if that fails then  best-first on 1*g(s) + 5*h(s) where
+	metric is  plan length
+
+Cueing down from goal distance:   55 into depth [1]
+                              	50        	[1]
+                              	49        	[1]
+                              	48        	[1]
+                              	47        	[1]
+                              	46        	[1][2]
+                              	45        	[1]
+                              	44        	[1][2]
+                              	43        	[1][2]
+                              	42        	[1][2]
+                              	41        	[1][2][3]
+                              	40        	[1]
+                              	39        	[1]
+                              	38        	[1][2][3][4][5]
+                              	37        	[1]
+                              	36        	[1][2][3]
+                              	35        	[1][2][3][4]
+                              	34        	[1][2]
+                              	33        	[1][2][3][4]
+                              	32        	[1][2]
+                              	31        	[1][2][3][4]
+                              	30        	[1][2]
+                              	29        	[1][2][3][4]
+                              	27        	[1]
+                              	26        	[1][2][3][4]
+                              	25        	[1][2][3]
+                              	24        	[1][2][3]
+                              	23        	[1][2][3]
+                              	22        	[1][2][3][4]
+                              	21        	[1][2][3]
+                              	20        	[1]
+                              	19        	[1][2][3]
+                              	18        	[1][2][3]
+                              	17        	[1][2][3]
+                              	15        	[1][2][3]
+                              	14        	[1][2][3]
+                              	13        	[1][2][3]
+                              	12        	[1]
+                              	11        	[1]
+                              	10        	[1][2][3][4]
+                               	9        	[1]
+                               	8        	[1]
+                               	7        	[1]
+                               	6        	[1]
+                               	5        	[1]
+                               	3        	[1]
+                               	2        	[1]
+                               	1        	[1]
+                               	0       	 
+
+ff: found legal plan as follows
+
+step	0: MOVER R7 AL4 A0
+    	1: COGERPERSONA R6 A1 P4
+    	2: DEJARPERSONA R6 A1 P4
+    	3: COGERPERSONA R6 A1 P1
+    	4: DEJARPERSONA R6 A1 P1
+    	5: MOVER R7 A0 AL4
+    	6: COGERSUMINISTRO R7 AL4 S8
+    	7: MOVER R7 AL4 A1
+    	8: MOVER R7 A1 AL3
+    	9: DEJARSUMINISTRO R7 AL3 S8
+   	10: MOVER R7 AL3 AL1
+   	11: COGERSUMINISTRO R7 AL1 S1
+   	12: MOVER R7 AL1 AL3
+   	13: DEJARSUMINISTRO R7 AL3 S1
+   	14: MOVER R6 A1 AL1
+   	15: MOVER R4 A0 AL4
+   	16: MOVER R4 AL4 A1
+   	17: COGERSUMINISTRO R6 AL1 S9
+   	18: DEJARSUMINISTRO R6 AL1 S9
+   	19: MOVER R4 A1 AL1
+   	20: MOVER R5 AL0 A1
+   	21: COGERSUMINISTRO R4 AL1 S6
+   	22: MOVER R4 AL1 A1
+   	23: MOVER R6 AL1 AL3
+   	24: MOVER R4 A1 AL2
+   	25: MOVER R5 A1 A2
+   	26: DEJARSUMINISTRO R4 AL2 S6
+   	27: MOVER R4 AL2 A1
+   	28: MOVER R4 A1 AL4
+   	29: COGERSUMINISTRO R4 AL4 S7
+   	30: MOVER R4 AL4 A1
+   	31: MOVER R4 A1 AL0
+   	32: DEJARSUMINISTRO R4 AL0 S7
+   	33: MOVER R4 AL0 A1
+   	34: MOVER R4 A1 AL4
+   	35: COGERSUMINISTRO R4 AL4 S0
+   	36: MOVER R4 AL4 A1
+   	37: MOVER R4 A1 AL2
+   	38: DEJARSUMINISTRO R4 AL2 S0
+   	39: MOVER R4 AL2 A1
+   	40: MOVER R4 A1 AL0
+   	41: COGERSUMINISTRO R4 AL0 S2
+   	42: MOVER R4 AL0 A1
+   	43: MOVER R4 A1 AL2
+   	44: DEJARSUMINISTRO R4 AL2 S2
+   	45: COGERSUMINISTRO R4 AL2 S4
+   	46: MOVER R4 AL2 A1
+   	47: MOVER R4 A1 AL0
+   	48: DEJARSUMINISTRO R4 AL0 S4
+   	49: MOVER R2 A1 A2
+   	50: MOVER R6 AL3 AL1
+   	51: MOVER R7 AL3 A1
+   	52: COGERPERSONA R7 A1 P0
+   	53: MOVER R7 A1 A6
+   	54: DEJARPERSONA R7 A6 P0
+   	55: MOVER R7 A6 A1
+   	56: MOVER R7 A1 A5
+   	57: COGERPERSONA R7 A5 P7
+   	58: MOVER R7 A5 A1
+   	59: MOVER R7 A1 A6
+   	60: DEJARPERSONA R7 A6 P7
+   	61: MOVER R7 A6 A1
+   	62: MOVER R7 A1 A2
+   	63: MOVER R6 AL1 AL3
+   	64: COGERPERSONA R7 A2 P2
+   	65: MOVER R7 A2 A1
+   	66: MOVER R6 AL3 A1
+   	67: MOVER R7 A1 AL3
+   	68: MOVER R7 AL3 A4
+   	69: DEJARPERSONA R7 A4 P2
+   	70: MOVER R6 A1 AL2
+   	71: COGERSUMINISTRO R6 AL2 S5
+   	72: MOVER R6 AL2 A1
+   	73: MOVER R6 A1 AL4
+   	74: DEJARSUMINISTRO R6 AL4 S5
+   	75: MOVER R6 AL4 A1
+   	76: MOVER R6 A1 AL2
+   	77: COGERSUMINISTRO R6 AL2 S3
+   	78: MOVER R6 AL2 A1
+   	79: MOVER R6 A1 AL3
+   	80: DEJARSUMINISTRO R6 AL3 S3
+   	81: MOVER R6 AL3 AL1
+   	82: MOVER R6 AL1 A5
+   	83: COGERPERSONA R6 A5 P5
+   	84: MOVER R6 A5 AL1
+   	85: MOVER R6 AL1 AL3
+   	86: MOVER R6 AL3 A4
+   	87: MOVER R5 A2 A0
+   	88: DEJARPERSONA R6 A4 P5
+   	89: MOVER R5 A0 AL4
+   	90: MOVER R5 AL4 A3
+   	91: COGERPERSONA R5 A3 P6
+   	92: COGERPERSONA R5 A3 P8
+   	93: DEJARPERSONA R5 A3 P6
+   	94: COGERPERSONA R5 A3 P3
+   	95: MOVER R5 A3 AL4
+   	96: MOVER R5 AL4 A1
+   	97: DEJARPERSONA R5 A1 P8
+   	98: MOVER R5 A1 A5
+   	99: DEJARPERSONA R5 A5 P3
+	 
+
+time spent:	0.00 seconds instantiating 3968 easy, 0 hard action templates
+           	0.00 seconds reachability analysis, yielding 374 facts and 888 actions
+           	0.00 seconds creating final representation with 373 relevant facts, 16 relevant fluents
+           	0.00 seconds computing LNF
+           	0.00 seconds building connectivity graph
+           	1.49 seconds searching, evaluating 18328 states, to a max depth of 5
+           	1.49 seconds total time
+

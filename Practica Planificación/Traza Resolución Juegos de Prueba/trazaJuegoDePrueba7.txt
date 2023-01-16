@@ -1,0 +1,184 @@
+ff: parsing domain file
+domain 'DESPLAZAMIENTOS-EXT3' defined
+ ... done.
+ff: parsing problem file
+problem 'NOMBRE' defined
+ ... done.
+
+
+
+no optimization required. skipping criterion.
+
+
+no metric specified. plan length assumed.
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is EHC, if that fails then  best-first on 1*g(s) + 5*h(s) where
+	metric is  plan length
+
+Cueing down from goal distance:   68 into depth [1]
+                              	62        	[1]
+                              	61        	[1]
+                              	60        	[1]
+                              	59        	[1]
+                              	58        	[1][2]
+                              	56        	[1]
+                              	55        	[1][2]
+                              	52        	[1]
+                              	51        	[1][2][3]
+                              	50        	[1]
+                              	49        	[1][2][3]
+                              	48        	[1][2]
+                              	47        	[1]
+                              	46        	[1]
+                              	45        	[1][2]
+                              	44        	[1]
+                              	43        	[1][2]
+                              	42        	[1]
+                              	41        	[1]
+                              	40        	[1]
+                              	39        	[1][2]
+                              	38        	[1][2]
+                              	37        	[1]
+                              	36        	[1]
+                              	35        	[1][2][3]
+                              	34        	[1][2]
+                              	33        	[1]
+                              	32        	[1]
+                              	31        	[1][2][3]
+                              	30        	[1]
+                              	29        	[1]
+                              	28        	[1]
+                              	27        	[1]
+                              	26        	[1]
+                              	25        	[1]
+                              	24        	[1]
+                              	23        	[1]
+                              	22        	[1]
+                              	21        	[1]
+                              	20        	[1]
+                              	19        	[1][2][3]
+                              	18        	[1][2]
+                              	17        	[1][2][3]
+                              	16        	[1]
+                              	15        	[1][2][3][4]
+                              	14        	[1]
+                              	13        	[1][2]
+                              	12        	[1][2][3][4]
+                              	11        	[1]
+                              	10        	[1]
+                               	9        	[1][2]
+                               	8        	[1]
+                               	7        	[1]
+                               	6        	[1][2][3]
+                               	5        	[1]
+                               	4        	[1]
+                               	3        	[1]
+                               	2        	[1]
+                               	1        	[1]
+                               	0       	 
+
+ff: found legal plan as follows
+
+step	0: MOVER R3 AL5 AL7
+    	1: COGERSUMINISTRO R0 AL1 S6
+    	2: COGERPERSONA R2 A0 P5
+    	3: COGERSUMINISTRO R1 AL0 S4
+    	4: MOVER R1 AL0 A1
+    	5: MOVER R4 AL6 AL4
+    	6: COGERSUMINISTRO R4 AL4 S7
+    	7: MOVER R3 AL7 AL4
+    	8: COGERSUMINISTRO R3 AL4 S10
+    	9: MOVER R0 AL1 AL4
+   	10: DEJARSUMINISTRO R0 AL4 S6
+   	11: MOVER R2 A0 A2
+   	12: COGERPERSONA R2 A2 P6
+   	13: MOVER R2 A2 A0
+   	14: DEJARPERSONA R2 A0 P6
+   	15: MOVER R2 A0 A2
+   	16: MOVER R2 A2 AL5
+   	17: MOVER R1 A1 AL6
+   	18: MOVER R2 AL5 A1
+   	19: COGERPERSONA R2 A1 P1
+   	20: MOVER R4 AL4 AL6
+   	21: DEJARSUMINISTRO R4 AL6 S7
+   	22: MOVER R3 AL4 AL1
+   	23: DEJARSUMINISTRO R3 AL1 S10
+   	24: COGERSUMINISTRO R3 AL1 S2
+   	25: MOVER R3 AL1 AL4
+   	26: DEJARSUMINISTRO R3 AL4 S2
+   	27: COGERSUMINISTRO R3 AL4 S5
+   	28: MOVER R3 AL4 AL3
+   	29: DEJARSUMINISTRO R3 AL3 S5
+   	30: DEJARSUMINISTRO R1 AL6 S4
+   	31: MOVER R1 AL6 AL4
+   	32: MOVER R1 AL4 AL5
+   	33: COGERSUMINISTRO R1 AL5 S8
+   	34: MOVER R1 AL5 AL1
+   	35: DEJARSUMINISTRO R1 AL1 S8
+   	36: MOVER R4 AL6 A1
+   	37: COGERPERSONA R4 A1 P4
+   	38: MOVER R4 A1 AL5
+   	39: MOVER R2 A1 A3
+   	40: DEJARPERSONA R2 A3 P5
+   	41: MOVER R2 A3 A4
+   	42: COGERPERSONA R2 A4 P2
+   	43: MOVER R4 AL5 A2
+   	44: MOVER R1 AL1 A4
+   	45: COGERPERSONA R1 A4 P7
+   	46: COGERPERSONA R1 A4 P3
+   	47: MOVER R2 A4 A3
+   	48: COGERPERSONA R4 A2 P0
+   	49: MOVER R4 A2 AL5
+   	50: MOVER R4 AL5 A4
+   	51: DEJARPERSONA R1 A4 P7
+   	52: DEJARPERSONA R4 A4 P4
+   	53: DEJARPERSONA R1 A4 P3
+   	54: DEJARPERSONA R2 A3 P2
+   	55: DEJARPERSONA R2 A3 P1
+   	56: DEJARPERSONA R4 A4 P0
+   	57: MOVER R0 AL4 AL2
+   	58: MOVER R1 A4 AL4
+   	59: COGERSUMINISTRO R0 AL2 S9
+   	60: DEJARSUMINISTRO R0 AL2 S9
+   	61: MOVER R0 AL2 AL4
+   	62: MOVER R1 AL4 AL2
+   	63: COGERSUMINISTRO R1 AL2 S13
+   	64: MOVER R1 AL2 AL4
+   	65: DEJARSUMINISTRO R1 AL4 S13
+   	66: MOVER R0 AL4 AL5
+   	67: COGERSUMINISTRO R0 AL5 S12
+   	68: MOVER R0 AL5 A2
+   	69: MOVER R4 A4 AL4
+   	70: MOVER R0 A2 AL3
+   	71: DEJARSUMINISTRO R0 AL3 S12
+   	72: MOVER R0 AL3 AL4
+   	73: MOVER R0 AL4 AL6
+   	74: MOVER R4 AL4 AL6
+   	75: COGERSUMINISTRO R3 AL3 S0
+   	76: MOVER R3 AL3 AL4
+   	77: COGERSUMINISTRO R4 AL6 S11
+   	78: MOVER R4 AL6 AL4
+   	79: MOVER R3 AL4 AL2
+   	80: MOVER R4 AL4 AL2
+   	81: DEJARSUMINISTRO R4 AL2 S11
+   	82: DEJARSUMINISTRO R3 AL2 S0
+   	83: COGERSUMINISTRO R4 AL2 S3
+   	84: MOVER R4 AL2 AL4
+   	85: MOVER R4 AL4 AL7
+   	86: DEJARSUMINISTRO R4 AL7 S3
+   	87: COGERSUMINISTRO R4 AL7 S1
+   	88: MOVER R4 AL7 AL4
+   	89: MOVER R4 AL4 AL2
+   	90: DEJARSUMINISTRO R4 AL2 S1
+	 
+
+time spent:	0.00 seconds instantiating 3220 easy, 0 hard action templates
+           	0.00 seconds reachability analysis, yielding 306 facts and 735 actions
+           	0.00 seconds creating final representation with 304 relevant facts, 17 relevant fluents
+           	0.00 seconds computing LNF
+           	0.00 seconds building connectivity graph
+           	0.23 seconds searching, evaluating 3359 states, to a max depth of 4
+           	0.23 seconds total time
+

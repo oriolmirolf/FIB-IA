@@ -1,0 +1,129 @@
+ff: parsing domain file
+domain 'DESPLAZAMIENTOS-EXT1' defined
+ ... done.
+ff: parsing problem file
+problem 'NOMBRE' defined
+ ... done.
+
+
+no metric specified. plan length assumed.
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is EHC, if that fails then  best-first on 1*g(s) + 5*h(s) where
+	metric is  plan length
+
+Cueing down from goal distance:   48 into depth [1]
+                              	46        	[1]
+                              	45        	[1]
+                              	43        	[1]
+                              	42        	[1]
+                              	41        	[1]
+                              	40        	[1][2]
+                              	39        	[1]
+                              	38        	[1]
+                              	37        	[1]
+                              	36        	[1]
+                              	35        	[1]
+                              	34        	[1][2]
+                              	33        	[1]
+                              	32        	[1]
+                              	31        	[1]
+                              	30        	[1][2]
+                              	29        	[1]
+                              	28        	[1]
+                              	27        	[1]
+                              	26        	[1]
+                              	25        	[1]
+                              	24        	[1]
+                              	23        	[1]
+                              	22        	[1][2]
+                              	21        	[1]
+                              	20        	[1]
+                              	19        	[1]
+                              	18        	[1]
+                              	17        	[1]
+                              	16        	[1]
+                              	15        	[1]
+                              	14        	[1][2]
+                              	13        	[1][2]
+                              	12        	[1]
+                              	11        	[1]
+                              	10        	[1]
+                               	9        	[1][2]
+                               	8        	[1]
+                               	7        	[1]
+                               	6        	[1]
+                               	5        	[1]
+                               	4        	[1][2]
+                               	3        	[1]
+                               	2        	[1]
+                               	1        	[1]
+                               	0       	 
+
+ff: found legal plan as follows
+
+step	0: MOVER R5 AL4 A3
+    	1: MOVER R4 AL4 AL2
+    	2: COGERPERSONA R5 A3 P6
+    	3: COGERPERSONA R0 A1 P3
+    	4: MOVER R3 AL0 AL3
+    	5: COGERSUMINISTRO R3 AL3 S1
+    	6: MOVER R4 AL2 AL5
+    	7: COGERSUMINISTRO R4 AL5 S4
+    	8: MOVER R4 AL5 AL3
+    	9: DEJARSUMINISTRO R4 AL3 S4
+   	10: COGERSUMINISTRO R4 AL3 S0
+   	11: MOVER R1 AL2 AL4
+   	12: DEJARSUMINISTRO R4 AL3 S0
+   	13: MOVER R5 A3 A4
+   	14: COGERPERSONA R5 A4 P4
+   	15: DEJARPERSONA R5 A4 P6
+   	16: COGERPERSONA R5 A4 P2
+   	17: DEJARPERSONA R5 A4 P2
+   	18: MOVER R0 A1 A2
+   	19: COGERPERSONA R0 A2 P5
+   	20: DEJARPERSONA R0 A2 P3
+   	21: COGERPERSONA R0 A2 P0
+   	22: MOVER R0 A2 AL1
+   	23: MOVER R0 AL1 A3
+   	24: DEJARPERSONA R0 A3 P5
+   	25: MOVER R0 A3 A4
+   	26: DEJARPERSONA R0 A4 P0
+   	27: COGERSUMINISTRO R1 AL4 S8
+   	28: MOVER R1 AL4 AL2
+   	29: DEJARSUMINISTRO R1 AL2 S8
+   	30: MOVER R3 AL3 AL1
+   	31: DEJARSUMINISTRO R3 AL1 S1
+   	32: COGERSUMINISTRO R3 AL1 S7
+   	33: DEJARSUMINISTRO R3 AL1 S7
+   	34: MOVER R3 AL1 AL0
+   	35: COGERSUMINISTRO R3 AL0 S6
+   	36: MOVER R3 AL0 AL4
+   	37: DEJARSUMINISTRO R3 AL4 S6
+   	38: MOVER R1 AL2 AL0
+   	39: MOVER R3 AL4 AL2
+   	40: COGERSUMINISTRO R1 AL0 S5
+   	41: MOVER R1 AL0 AL2
+   	42: DEJARSUMINISTRO R1 AL2 S5
+   	43: COGERSUMINISTRO R3 AL2 S2
+   	44: MOVER R3 AL2 AL5
+   	45: DEJARSUMINISTRO R3 AL5 S2
+   	46: COGERSUMINISTRO R3 AL5 S3
+   	47: MOVER R3 AL5 AL4
+   	48: DEJARSUMINISTRO R3 AL4 S3
+   	49: MOVER R5 A4 A1
+   	50: COGERPERSONA R5 A1 P1
+   	51: DEJARPERSONA R5 A1 P4
+   	52: MOVER R5 A1 A4
+   	53: DEJARPERSONA R5 A4 P1
+	 
+
+time spent:	0.00 seconds instantiating 2664 easy, 0 hard action templates
+           	0.00 seconds reachability analysis, yielding 275 facts and 726 actions
+           	0.00 seconds creating final representation with 273 relevant facts, 12 relevant fluents
+           	0.00 seconds computing LNF
+           	0.00 seconds building connectivity graph
+           	0.02 seconds searching, evaluating 419 states, to a max depth of 2
+           	0.02 seconds total time
+
